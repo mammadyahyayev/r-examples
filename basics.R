@@ -14,3 +14,6 @@ num2
 case = 34
 Case = 56
 cAse = 33
+
+range <- 1:6
+range

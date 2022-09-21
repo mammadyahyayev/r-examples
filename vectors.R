@@ -23,3 +23,13 @@ class(status) # logical
 class(mix) # character
 class(vect1) # numeric
 class(mix_vect) # numeric
+
+
+vect1[1:3] # prints 1 2 3
+
+vect1[-1] # prints all values except first one (1)
+vect1[-2] # prints all values except second one (2)
+
+
+vect1[c(T,F,F,T)] # prints 1 and 4
+
