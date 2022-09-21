@@ -23,3 +23,9 @@ logical_value_FALSE
 logical_value_F
 logical_value_TRUE
 logical_value_T
+
+
+# factors
+gender <- as.factor(c("male", "female"))
+
+scores <- as.factor(c(123, 345, 234, 123, 345, 234, 678, 954, 347))
