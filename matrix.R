@@ -84,6 +84,24 @@ numbers
 # [3,]    3    6    9
 
 
+numbers[1, 3] # 7
+numbers[7] # 7
+numbers[c(1, 2), c(3)] # 7 8
+numbers[c(1,2,3), c(2)] # 4 5 6
+# first part selects rows, second part select columns
+
+numbers[2, ] # 2 5 8
+numbers[,3] # 7 8 9
+
+numbers[c(T, T, F),]
+#       [,1] [,2] [,3]
+# [1,]    1    4    7
+# [2,]    2    5    8
+
+# first True - for first row
+# second True - for second row
+# False - for third row
+
 
 
 
