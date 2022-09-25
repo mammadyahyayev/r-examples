@@ -102,11 +102,29 @@ numbers[c(T, T, F),]
 # second True - for second row
 # False - for third row
 
+numbers * 2
+#       [,1] [,2] [,3]
+# [1,]    2    8   14
+# [2,]    4   10   16
+# [3,]    6   12   18
+
+numbers + 100
+#       [,1] [,2] [,3]
+# [1,]  101  104  107
+# [2,]  102  105  108
+# [3,]  103  106  109
+
+# modify single element
+numbers[3, 3] = "nine"
+numbers
+#       [,1] [,2] [,3]  
+# [1,] "1"  "4"  "7"   
+# [2,] "2"  "5"  "8"   
+# [3,] "3"  "6"  "nine"
 
 
-
-
-
+numbers[numbers < 5] <- numbers[numbers < 5] * (-1)
+numbers
 
 
 
