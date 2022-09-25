@@ -29,3 +29,11 @@ logical_value_T
 gender <- as.factor(c("male", "female"))
 
 scores <- as.factor(c(123, 345, 234, 123, 345, 234, 678, 954, 347))
+
+class_factor <- factor(c("681", "683", "685", "681"))
+class_factor # Levels: 681 683 685
+
+summary(class_factor)
+# 681 683 685 
+# 2   1   1
+

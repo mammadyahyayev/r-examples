@@ -126,7 +126,9 @@ numbers
 numbers[numbers < 5] <- numbers[numbers < 5] * (-1)
 numbers
 
+numbers <- c(1, 2, 3, 4, 5, 6, 7, 8, 9)
+dim(numbers) <- c(3,3)
+rowSums(numbers) # 12 15 18
+colSums(numbers) # 6 15 24
 
-
-
-
+str(numbers) # num [1:3, 1:3] 1 2 3 4 5 6 7 8 9
