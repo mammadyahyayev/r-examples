@@ -84,8 +84,9 @@ subset(person, age > 30 | nchar(name) == 5)
 # 2 Cabbar  44
 # 3  Qalib  36
 
-order(person$name)
+person$name <- person$name[order(person$name)]
 
+person
 
 
 
