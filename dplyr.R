@@ -20,6 +20,16 @@ counties %>%
 counties %>%
   select(-c(county, population, men, women, black, native))
 
+
+counties %>% 
+  select(state, county, contains("work"))
+
+counties %>% 
+  select(state, county, starts_with("p"))
+
+counties %>% 
+  select(state, county, ends_with("k"))
+
 # arrange methods
 
 # sort ascending
@@ -114,6 +124,55 @@ counties %>%
   group_by(state, metro) %>% 
   count(state)  %>% 
   filter(metro == "Metro")
+
+counties %>%
+  select(region, state, county, population, black) %>% 
+  group_by(region) %>% 
+  top_n(1, black)
+
+
+counties %>% 
+  group_by(state) %>% 
+  summarize(average_pop = mean(population))
+
+# rename methods
+counties %>% 
+  select(state, county, black_people_rate = black)
+
+counties %>% 
+  count(state) %>% 
+  rename(number_of_counties = n)
+
+
+counties %>% 
+  transmute(state, county, population, public_workers = population * public_work / 100)
+
+counties %>% 
+  select(last_col())
+
+counties
+lag(counties, 3)
+lead(counties, 11)
+
+
+counties %>% 
+  group_by(state) %>% 
+  filter(state %in% c("Alabama", "Texas")) %>% 
+  count(state)
+
+
+vector_a <- c(4, 9, 22, 36)
+
+diff = vector_a - lag(vector_a, default = 0)
+diff    
+
+diff <- lead(vector_a) - vector_a
+diff
+
+
+
+
+
 
 
 
