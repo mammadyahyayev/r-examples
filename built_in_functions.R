@@ -22,3 +22,13 @@ nchar(x) # returns 5  6  6  1 15
 x <- c("asfef", NA, "stuff.blah.yech")
 nchar(x, keepNA = FALSE) # returns 5  2 15
 # 2 for NA because it has 2 chars
+
+# strsplit
+message <- "This_is_message"
+parts <- strsplit(message, "_")
+
+
+numbers <- c(2, 4, 5, 6, 8, 8, 9, 10, 12, 15)
+sd(numbers, na.rm=TRUE) # 2.160247
+
+mean(numbers, trim=0.1)
