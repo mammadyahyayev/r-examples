@@ -59,4 +59,31 @@ ggplot(sub_diamonds, aes(cut, fill=clarity)) +
 
 
 
+ggplot(sub_diamonds, aes(carat, price)) +
+  geom_jitter(width = 0.3)
+
+ggplot(sub_diamonds, aes(cut, carat, fill=clarity)) +
+  geom_point(position = position_jitterdodge(0.3, dodge.width=0.8))
+
+
+ggplot(sub_diamonds, aes(carat, ..density..)) +
+  geom_histogram(binwidth=1, fill='#51A8C9')
+  
+
+ggplot(sub_diamonds, aes(carat, fill=cut)) +
+  geom_histogram(binwidth=1, position="identity", alpha=0.7)
+
+
+ggplot(sub_diamonds, aes(cut, fill=clarity)) +
+  geom_bar(position = "fill")
+
+ggplot(sub_diamonds, aes(cut, fill=clarity)) +
+  geom_bar(position = position_dodge(0.5), alpha=0.8) # bars will overlap each other
+
+ggplot(sub_diamonds, aes(clarity, fill=cut)) +
+  geom_bar(position = position_fill()) +
+  scale_fill_brewer()
+ 
+ggplot(sub_diamonds, aes(carat, price)) +
+  geom_line(aes(group=cut)) 
 
