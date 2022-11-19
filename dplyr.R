@@ -4,9 +4,22 @@ library(readr)
 glimpse(counties)
 View(counties)
 
+x <- c(7,1,5)
+x %>% mean()
+
+
+country <- c("Malawi", "Haiti")
+lifeExp <- c(48.3, 33.3)
+continent <- c("A", "B")
+df <- data.frame(country, lifeExp)
+
+
+df %>% 
+  mutate(continent = continent)
+
 # Select specific columns
 counties %>%
-  select(state, county, population, men, women)
+  select(not("region"))
 
 # Select range of columns
 counties %>%

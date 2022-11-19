@@ -70,8 +70,8 @@ ggplot(sub_diamonds, aes(carat, ..density..)) +
   geom_histogram(binwidth=1, fill='#51A8C9')
   
 
-ggplot(sub_diamonds, aes(carat, fill=cut)) +
-  geom_histogram(binwidth=1, position="identity", alpha=0.7)
+ggplot(sub_diamonds, aes(carat)) +
+  geom_histogram(binwidth = 1)
 
 
 ggplot(sub_diamonds, aes(cut, fill=clarity)) +
@@ -86,4 +86,40 @@ ggplot(sub_diamonds, aes(clarity, fill=cut)) +
  
 ggplot(sub_diamonds, aes(carat, price)) +
   geom_line(aes(group=cut)) 
+
+
+
+
+emissions <- c("low", "low", "high", "high", "low")
+mpg <- c(23.1, 10.4, 12.5, 31.0, 30.2)
+
+
+df <- data.frame(age=age, emissions=emissions, mpg=mpg, value=value)
+df
+
+ggplot(df, aes(age, value)) +
+  geom_point(size=3)
+
+
+week <- c(0,1,2,3,4,5)
+resp <- c(91, 89, 82, 75, 59, 53)
+
+df <- data.frame(week=week, resp=resp)
+
+
+df %>% 
+  select("week")
+
+df %>% 
+  select("week", "resp")
+
+df %>% 
+  select(-week)
+
+df %>% 
+  select(-"week")
+
+df %>% 
+  select(!week)
+
 
