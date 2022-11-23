@@ -1,45 +1,29 @@
-library(readxl)
+# Import Required Libraries
 library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(readxl)
 
+# Read from excel file
 olympic_games <- read_excel("olympic_games.xlsx")
-olympic_games %>% 
+
+View(olympic_games)
+
+olympic_games <- olympic_games %>% 
+  fill(c(Region, Year), .direction="down")
+
+olympic_games_by_region <- olympic_games %>%
+  group_by(Region, Year) %>% 
+  summarize()
+
+olympic_games_by_region_count <- olympic_games_by_region %>% 
+  group_by(Region) %>% 
   count()
 
-# how many Olympic games have been held
-olympic_games %>% 
-  summarise(min_year = min(year), max_year = max(year), diff = (max_year - min_year + 4) / 4)
 
-# first and last Olympic game
-olympic_games %>% 
-  filter(year == max(year) | year == min(year))
+View(olympic_games_by_region_count)  
 
-
-host_continents <- olympic_games %>% 
-  group_by(continent) %>% 
-  count(name = "count") 
-  
-host_cities <- olympic_games %>% 
-  group_by(city) %>% 
-  count(name = "count") 
-
-# top n cities where the Olympic Games held most
-olympic_games %>% 
-  group_by(city) %>% 
-  count(name = "count") %>% 
-  arrange(desc(count)) %>% 
-  ungroup() %>% 
-  top_n(3)
-  
-
-pie(host_continents$count, 
-    labels=host_continents$continent,
-    main="Olympic games hosted by countries",
-    col = rainbow(length(host_continents$continent)))
-
-
-library(ggplot2)
-
-ggplot(data = host_continents, aes(x="", y = count, fill = continent)) +
+ggplot(data = olympic_games_by_region_count, aes(x="", y = n, fill = Region)) +
   geom_bar(stat = "identity", color = "black") +
   coord_polar("y") +
   labs(title = "The Olympic Games held by continents so far")
