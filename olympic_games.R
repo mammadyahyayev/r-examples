@@ -20,12 +20,16 @@ olympic_games_by_region_count <- olympic_games_by_region %>%
   group_by(Region) %>% 
   count()
 
-
 View(olympic_games_by_region_count)  
 
-ggplot(data = olympic_games_by_region_count, aes(x="", y = n, fill = Region)) +
-  geom_bar(stat = "identity", color = "black") +
+ggplot(data = olympic_games_by_region_count,
+             aes(x="", y = n, fill = Region)) +
+  geom_bar(stat = "identity", color = "white") +
   coord_polar("y") +
-  labs(title = "The Olympic Games held by continents so far")
+  geom_text(aes(label = n),
+            position = position_stack(vjust = 0.5),
+            color="white",
+            size=5) +
+  labs(title = "The Olympic Games held by regions so far")
 
     
