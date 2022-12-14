@@ -1,3 +1,8 @@
 *.pdf
 *.xlsx
 *.rds
+occupational-wage/.Rproj.user
+occupational-wage/.RData
+occupational-wage/Rhistory
+*.RData
+*.Rhistory
