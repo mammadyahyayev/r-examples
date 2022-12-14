@@ -1,0 +1,30 @@
+Hierarchical cluster analysis for Occupation Employee Statistics
+The observations are listed below
+	 ==> Management
+	 ==> Business Operations
+	 ==> Computer Science
+	 ==> Architecture/Engineering
+	 ==> Life/Physical/Social Sci.
+	 ==> Community Services
+	 ==> Legal
+	 ==> Education/Training/Library
+	 ==> Arts/Design/Entertainment
+	 ==> Healthcare Practitioners
+	 ==> Healthcare Support
+	 ==> Protective Service
+	 ==> Food Preparation
+	 ==> Grounds Cleaning & Maint.
+	 ==> Personal Care
+	 ==> Sales
+	 ==> Office Administrative
+	 ==> Farming/Fishing/Forestry
+	 ==> Construction
+	 ==> Installation/Repair/Maint.
+	 ==> Production
+	 ==> Transportation/Moving
+
+There are  3  cluster(s) available.
+Clusters:
+	 ==> First
+	 ==> Second
+	 ==> Third
