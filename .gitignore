@@ -6,3 +6,4 @@ occupational-wage/.RData
 occupational-wage/Rhistory
 *.RData
 *.Rhistory
+.Rproj.user
